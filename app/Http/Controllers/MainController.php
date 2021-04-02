@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Adapters\Email\EmailAdapter;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -11,8 +12,8 @@ class MainController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function home()
+    public function home(EmailAdapter $emailAdapter)
     {
-        return 'home';
+        $emailAdapter->send('sdfsdf','sdfsdf','sdfsdf');
     }
 }
