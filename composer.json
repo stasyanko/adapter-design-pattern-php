@@ -12,8 +12,11 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3.1|^7.0.1",
+        "kriswallsmith/buzz": "^1.2",
         "laravel/framework": "^7.29",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "mailgun/mailgun-php": "^3.2",
+        "nyholm/psr7": "^1.4"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
