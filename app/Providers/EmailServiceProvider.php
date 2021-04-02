@@ -15,7 +15,7 @@ class EmailServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(EmailAdapter::class, function($app){
+        $this->app->bind(EmailAdapter::class, function($app){
             return new MailgunEmailAdapter(
                 config('services.mailgun.secret'),
                 config('services.mailgun.domain'),

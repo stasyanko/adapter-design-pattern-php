@@ -12,8 +12,14 @@ class MainController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function home(EmailAdapter $emailAdapter)
+    public function mail(EmailAdapter $emailAdapter)
     {
-        $emailAdapter->send('sdfsdf','sdfsdf','sdfsdf');
+        $emailAdapter->send(
+            'username@emailservice.com',
+            'Hi! Thanks for signing up!',
+            'Here is your verification code 12345'
+        );
+
+        dd('Email sent!');
     }
 }
