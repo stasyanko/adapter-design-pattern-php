@@ -30,4 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'imageoptim' => [
+        'api_key' => env('IMAGEOPTIM_API_KEY'),
+    ],
+
 ];

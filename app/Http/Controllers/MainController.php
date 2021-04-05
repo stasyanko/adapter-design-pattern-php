@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Adapters\Email\EmailAdapter;
+use App\Adapters\ImageOptimizer\ImageOptimizerAdapter;
+use App\Adapters\ImageOptimizer\ImageQualityValues;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -21,5 +23,13 @@ class MainController extends BaseController
         );
 
         dd('Email sent!');
+    }
+
+    public function optimizeImage(ImageOptimizerAdapter $optimizerAdapter)
+    {
+        $imageUrl = 'https://homepages.cae.wisc.edu/~ece533/images/mountain.png';
+        $optimizedImagePath = $optimizerAdapter->optimize($imageUrl,200,ImageQualityValues::MEDIUM);
+
+        dd($optimizedImagePath);
     }
 }
