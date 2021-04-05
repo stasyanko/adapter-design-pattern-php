@@ -3,11 +3,10 @@
 namespace App\Providers;
 
 use App\Adapters\ImageOptimizer\CloudinaryApiAdapter;
-use App\Adapters\ImageOptimizer\ImageOptimizerAdapter;
+use App\Adapters\ImageOptimizer\ThumbnailMakerAdapter;
 use Illuminate\Support\ServiceProvider;
-use ImageOptim\API;
 
-class ImageOptimizerServiceProvider extends ServiceProvider
+class ThumbnailMakerServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -16,10 +15,8 @@ class ImageOptimizerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(ImageOptimizerAdapter::class, function($app){
-            return new CloudinaryApiAdapter(
-                new API(config('services.imageoptim.api_key'))
-            );
+        $this->app->bind(ThumbnailMakerAdapter::class, function($app){
+            return new CloudinaryApiAdapter();
         });
     }
 
