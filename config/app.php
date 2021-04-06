@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\EmailServiceProvider::class,
         App\Providers\ThumbnailMakerServiceProvider::class,
+        App\Providers\BitcoinPriceServiceProvider::class,
 
     ],
 

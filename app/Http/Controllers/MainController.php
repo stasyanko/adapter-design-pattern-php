@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Adapters\Bitcoin\BitcoinPriceAdapter;
 use App\Adapters\Email\EmailAdapter;
 use App\Adapters\Thumbnail\ThumbnailMakerAdapter;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -34,5 +35,12 @@ class MainController extends BaseController
         $thumbnailUrl = $thumbnailMakerAdapter->make($file);
 
         dd($thumbnailUrl);
+    }
+
+    public function bitcoin(BitcoinPriceAdapter $bitcoinPriceAdapter)
+    {
+        $price = $bitcoinPriceAdapter->fetchPrice();
+
+        dd($price);
     }
 }

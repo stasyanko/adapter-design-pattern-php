@@ -34,4 +34,8 @@ return [
         'api_key' => env('IMAGEOPTIM_API_KEY'),
     ],
 
+    'coinmarketcap' => [
+        'api_key' => env('COINMARKETCAP_API_KEY'),
+    ],
+
 ];
