@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Adapters\Email\EmailAdapter;
-use App\Adapters\ImageOptimizer\ImageQualityValues;
-use App\Adapters\ImageOptimizer\ThumbnailMakerAdapter;
+use App\Adapters\Thumbnail\ThumbnailMakerAdapter;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;

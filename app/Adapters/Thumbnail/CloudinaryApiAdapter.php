@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Adapters\ImageOptimizer;
+namespace App\Adapters\Thumbnail;
 
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Http\UploadedFile;

@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Adapters\ImageOptimizer\CloudinaryApiAdapter;
-use App\Adapters\ImageOptimizer\ThumbnailMakerAdapter;
+use App\Adapters\Thumbnail\CloudinaryApiAdapter;
+use App\Adapters\Thumbnail\ThumbnailMakerAdapter;
 use Illuminate\Support\ServiceProvider;
 
 class ThumbnailMakerServiceProvider extends ServiceProvider

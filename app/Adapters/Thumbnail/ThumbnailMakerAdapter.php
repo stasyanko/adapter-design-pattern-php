@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Adapters\ImageOptimizer;
+namespace App\Adapters\Thumbnail;
 
 use Illuminate\Http\UploadedFile;
 
