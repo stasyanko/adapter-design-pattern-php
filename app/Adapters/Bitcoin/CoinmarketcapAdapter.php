@@ -13,6 +13,17 @@ class CoinmarketcapAdapter implements BitcoinPriceAdapter
 
     public function fetchPrice(): ?float
     {
+        $resultObj = $this->requestLatestData();
+
+        if($resultObj->status->error_code === 0) {
+            return $resultObj->data[0]->quote->USD->price;
+        }
+
+        return null;
+    }
+
+    private function requestLatestData(): object
+    {
         $curl = curl_init();
         curl_setopt_array($curl, [
             CURLOPT_URL => $this->makeUrl(),
@@ -24,14 +35,9 @@ class CoinmarketcapAdapter implements BitcoinPriceAdapter
         ]);
 
         $response = curl_exec($curl);
-        $resultObj = json_decode($response);
         curl_close($curl);
 
-        if($resultObj->status->error_code === 0) {
-            return $resultObj->data[0]->quote->USD->price;
-        }
-
-        return null;
+        return json_decode($response);
     }
 
     private function makeUrl(): string
