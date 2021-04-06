@@ -3,6 +3,7 @@
 namespace App\Adapters\Weather;
 
 use GuzzleHttp\ClientInterface;
+use InvalidArgumentException;
 
 class OpenweathermapAdapter implements WeatherProviderAdapter
 {
@@ -22,8 +23,14 @@ class OpenweathermapAdapter implements WeatherProviderAdapter
     {
         $response = $this->client->request(
             'GET',
-            "https://api.openweathermap.org/data/2.5/weather?units=metric&lat={$lat}&lon={$lon}&appid={$this->apiKey}"
+            "https://api.openweathermap.org/data/2.5/weather?units=metric&lat={$lat}&lon={$lon}&appid={$this->apiKey}",
+            ['http_errors' => false]
         );
+
+        if ($response->getStatusCode() === 400) {
+            throw new InvalidArgumentException('Lat or lng are wrong');
+        }
+
         if ($response->getStatusCode() !== 200) {
             return null;
         }
