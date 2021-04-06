@@ -38,4 +38,9 @@ return [
         'api_key' => env('COINMARKETCAP_API_KEY'),
     ],
 
+    'openweathermap' => [
+        'api_key' => env('OPENWEATHERMAP_API_KEY'),
+    ],
+
+
 ];

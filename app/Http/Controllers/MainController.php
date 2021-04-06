@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Adapters\Bitcoin\BitcoinPriceAdapter;
 use App\Adapters\Email\EmailAdapter;
 use App\Adapters\Thumbnail\ThumbnailMakerAdapter;
+use App\Adapters\Weather\WeatherProviderAdapter;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -42,5 +45,12 @@ class MainController extends BaseController
         $price = $bitcoinPriceAdapter->fetchPrice();
 
         dd($price);
+    }
+
+    public function weather(WeatherProviderAdapter $weatherProviderAdapter)
+    {
+        $weatherDto = $weatherProviderAdapter->currentWeather(53.893009,27.567444);
+
+        dd($weatherDto);
     }
 }
