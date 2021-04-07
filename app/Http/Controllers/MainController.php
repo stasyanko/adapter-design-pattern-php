@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Adapters\Bitcoin\BitcoinPriceInterface;
 use App\Adapters\Email\EmailClientInterface;
+use App\Adapters\Image\ImageSearchInterface;
 use App\Adapters\IpGeolocation\IpGeolocationInterface;
 use App\Adapters\Thumbnail\ThumbnailMakerInterface;
 use App\Adapters\Weather\WeatherProviderInterface;
@@ -24,6 +25,13 @@ class MainController extends BaseController
         $geoData = $ipGeolocation->geoDataFromIp('1.32.239.255	');
 
         dd($geoData);
+    }
+
+    public function image(ImageSearchInterface $imageSearch)
+    {
+        $imageDtos = $imageSearch->search('orange', 20);
+
+        dd($imageDtos);
     }
 
     public function mail(EmailClientInterface $emailAdapter)

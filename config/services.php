@@ -46,4 +46,8 @@ return [
         'access_key' => env('IPSTACK_ACCESS_KEY'),
     ],
 
+    'pixabay' => [
+        'api_key' => env('PIXABAY_API_KEY'),
+    ],
+
 ];
