@@ -178,6 +178,7 @@ return [
         App\Providers\ThumbnailMakerServiceProvider::class,
         App\Providers\WeatherServiceProvider::class,
         App\Providers\BitcoinPriceServiceProvider::class,
+        App\Providers\IpGeolocationServiceProvider::class,
 
     ],
 

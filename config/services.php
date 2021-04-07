@@ -42,5 +42,8 @@ return [
         'api_key' => env('OPENWEATHERMAP_API_KEY'),
     ],
 
+    'ipstack' => [
+        'access_key' => env('IPSTACK_ACCESS_KEY'),
+    ],
 
 ];

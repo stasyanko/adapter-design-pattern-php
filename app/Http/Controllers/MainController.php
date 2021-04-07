@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Adapters\Bitcoin\BitcoinPriceInterface;
 use App\Adapters\Email\EmailClientInterface;
+use App\Adapters\IpGeolocation\IpGeolocationInterface;
 use App\Adapters\Thumbnail\ThumbnailMakerInterface;
 use App\Adapters\Weather\WeatherProviderInterface;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -17,6 +18,13 @@ use Illuminate\Routing\Controller as BaseController;
 class MainController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function ip(IpGeolocationInterface $ipGeolocation)
+    {
+        $geoData = $ipGeolocation->geoDataFromIp('1.32.239.255	');
+
+        dd($geoData);
+    }
 
     public function mail(EmailClientInterface $emailAdapter)
     {
