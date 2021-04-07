@@ -4,7 +4,7 @@ namespace App\Adapters\Thumbnail;
 
 use Illuminate\Http\UploadedFile;
 
-interface ThumbnailMakerAdapter
+interface ThumbnailMakerInterface
 {
     /**
      * @param UploadedFile $uploadedFile

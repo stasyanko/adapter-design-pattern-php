@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Adapters\Bitcoin\BitcoinPriceInterface;
 use App\Adapters\Email\EmailClientInterface;
-use App\Adapters\Thumbnail\ThumbnailMakerAdapter;
+use App\Adapters\Thumbnail\ThumbnailMakerInterface;
 use App\Adapters\Weather\WeatherProviderAdapter;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -29,7 +29,7 @@ class MainController extends BaseController
         dd('Email sent!');
     }
 
-    public function makeThumbnail(ThumbnailMakerAdapter $thumbnailMakerAdapter)
+    public function makeThumbnail(ThumbnailMakerInterface $thumbnailMakerAdapter)
     {
         $file = new UploadedFile(
             public_path('montblanc.jpg'),

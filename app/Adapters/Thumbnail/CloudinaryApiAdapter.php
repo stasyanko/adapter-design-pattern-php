@@ -5,7 +5,7 @@ namespace App\Adapters\Thumbnail;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Http\UploadedFile;
 
-class CloudinaryApiAdapter implements ThumbnailMakerAdapter
+class CloudinaryApiAdapter implements ThumbnailMakerInterface
 {
     public function make(UploadedFile $uploadedFile): string
     {
