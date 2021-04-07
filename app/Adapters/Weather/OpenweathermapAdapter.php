@@ -5,7 +5,7 @@ namespace App\Adapters\Weather;
 use GuzzleHttp\ClientInterface;
 use InvalidArgumentException;
 
-class OpenweathermapAdapter implements WeatherProviderAdapter
+class OpenweathermapAdapter implements WeatherProviderInterface
 {
     private ClientInterface $client;
     private string $apiKey;

@@ -4,7 +4,7 @@ namespace App\Adapters\Weather;
 
 use InvalidArgumentException;
 
-interface WeatherProviderAdapter
+interface WeatherProviderInterface
 {
     /**
      * @param float $lat

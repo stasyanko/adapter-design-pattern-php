@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 use App\Adapters\Bitcoin\BitcoinPriceInterface;
 use App\Adapters\Email\EmailClientInterface;
 use App\Adapters\Thumbnail\ThumbnailMakerInterface;
-use App\Adapters\Weather\WeatherProviderAdapter;
+use App\Adapters\Weather\WeatherProviderInterface;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -47,7 +47,7 @@ class MainController extends BaseController
         dd($price);
     }
 
-    public function weather(WeatherProviderAdapter $weatherProviderAdapter)
+    public function weather(WeatherProviderInterface $weatherProviderAdapter)
     {
         $weatherDto = $weatherProviderAdapter->currentWeather(53.893009,27.567444);
 
