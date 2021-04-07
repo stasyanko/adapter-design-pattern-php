@@ -2,7 +2,7 @@
 
 namespace App\Adapters\Bitcoin;
 
-interface BitcoinPriceAdapter
+interface BitcoinPriceInterface
 {
     public function fetchPrice(): ?float;
 }

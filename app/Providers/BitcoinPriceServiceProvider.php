@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Adapters\Bitcoin\BitcoinPriceAdapter;
+use App\Adapters\Bitcoin\BitcoinPriceInterface;
 use App\Adapters\Bitcoin\CoinmarketcapAdapter;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,7 +15,7 @@ class BitcoinPriceServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(BitcoinPriceAdapter::class, function($app){
+        $this->app->bind(BitcoinPriceInterface::class, function($app){
             return new CoinmarketcapAdapter(config('services.coinmarketcap.api_key'));
         });
     }

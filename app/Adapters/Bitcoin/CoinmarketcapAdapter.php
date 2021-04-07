@@ -2,7 +2,7 @@
 
 namespace App\Adapters\Bitcoin;
 
-class CoinmarketcapAdapter implements BitcoinPriceAdapter
+class CoinmarketcapAdapter implements BitcoinPriceInterface
 {
     private string $apiKey;
 

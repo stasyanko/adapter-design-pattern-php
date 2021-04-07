@@ -9,6 +9,8 @@
     "license": "MIT",
     "require": {
         "php": "^7.4|^8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
         "cloudinary-labs/cloudinary-laravel": "^1.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
@@ -17,9 +19,7 @@
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "mailgun/mailgun-php": "^3.2",
-        "nyholm/psr7": "^1.4",
-        "ext-curl": "*",
-        "ext-json": "*"
+        "nyholm/psr7": "^1.4"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Adapters\Bitcoin\BitcoinPriceAdapter;
+use App\Adapters\Bitcoin\BitcoinPriceInterface;
 use App\Adapters\Email\EmailAdapter;
 use App\Adapters\Thumbnail\ThumbnailMakerAdapter;
 use App\Adapters\Weather\WeatherProviderAdapter;
@@ -40,7 +40,7 @@ class MainController extends BaseController
         dd($thumbnailUrl);
     }
 
-    public function bitcoin(BitcoinPriceAdapter $bitcoinPriceAdapter)
+    public function bitcoin(BitcoinPriceInterface $bitcoinPriceAdapter)
     {
         $price = $bitcoinPriceAdapter->fetchPrice();
 
