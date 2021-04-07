@@ -4,7 +4,7 @@ namespace App\Adapters\Email;
 
 use Mailgun\Mailgun;
 
-class MailgunEmailAdapter implements EmailAdapter
+class MailgunEmailAdapter implements EmailClientInterface
 {
     private string $apiKey;
     private string $domain;

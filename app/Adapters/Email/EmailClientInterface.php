@@ -4,7 +4,7 @@
 namespace App\Adapters\Email;
 
 
-interface EmailAdapter
+interface EmailClientInterface
 {
     public function send(
         string $toAddress,

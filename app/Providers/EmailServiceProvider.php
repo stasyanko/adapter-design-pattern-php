@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Adapters\Email\EmailAdapter;
+use App\Adapters\Email\EmailClientInterface;
 use App\Adapters\Email\MailgunEmailAdapter;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,7 +15,7 @@ class EmailServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(EmailAdapter::class, function($app){
+        $this->app->bind(EmailClientInterface::class, function($app){
             return new MailgunEmailAdapter(
                 config('services.mailgun.secret'),
                 config('services.mailgun.domain'),

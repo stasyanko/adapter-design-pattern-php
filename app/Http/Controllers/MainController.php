@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Adapters\Bitcoin\BitcoinPriceInterface;
-use App\Adapters\Email\EmailAdapter;
+use App\Adapters\Email\EmailClientInterface;
 use App\Adapters\Thumbnail\ThumbnailMakerAdapter;
 use App\Adapters\Weather\WeatherProviderAdapter;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -18,7 +18,7 @@ class MainController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function mail(EmailAdapter $emailAdapter)
+    public function mail(EmailClientInterface $emailAdapter)
     {
         $emailAdapter->send(
             'username@emailservice.com',
