@@ -5,6 +5,8 @@ namespace App\Adapters\Invoice;
 use LaravelDaily\Invoices\Classes\InvoiceItem;
 use LaravelDaily\Invoices\Classes\Party;
 use LaravelDaily\Invoices\Invoice;
+use RuntimeException;
+use Exception;
 
 class LaravelInvoicesAdapter implements InvoiceGeneratorInterface
 {
@@ -41,16 +43,24 @@ class LaravelInvoicesAdapter implements InvoiceGeneratorInterface
             ->seller($seller);
 
         foreach ($invoiceItemDtos as $invoiceItemDto) {
-            $item = (new InvoiceItem())
-                ->title($invoiceItemDto->title())
-                ->pricePerUnit($invoiceItemDto->pricePerUnit())
-                ->quantity($invoiceItemDto->quantity())
-                ->discount($invoiceItemDto->discount());
+            try {
+                $item = (new InvoiceItem())
+                    ->title($invoiceItemDto->title())
+                    ->pricePerUnit($invoiceItemDto->pricePerUnit())
+                    ->quantity($invoiceItemDto->quantity())
+                    ->discount($invoiceItemDto->discount());
+            } catch (Exception $e) {
+                throw new RuntimeException($e->getMessage());
+            }
 
             $invoice->addItem($item);
         }
 
-        $invoice->currencyCode($currencyCode)
-            ->render();
+        try {
+            $invoice->currencyCode($currencyCode)
+                ->render();
+        } catch (Exception $e) {
+            throw new RuntimeException($e->getMessage());
+        }
     }
 }

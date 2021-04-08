@@ -2,6 +2,8 @@
 
 namespace App\Adapters\Invoice;
 
+use RuntimeException;
+
 interface InvoiceGeneratorInterface
 {
     /**
@@ -11,6 +13,8 @@ interface InvoiceGeneratorInterface
      * @param string $currencyCode
      * @param string $pathToSave
      * @return void
+     *
+     * @throws RuntimeException
      */
     public function generate(
         PartyDto $sellerDto,
