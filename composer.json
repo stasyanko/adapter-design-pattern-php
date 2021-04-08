@@ -18,6 +18,7 @@
         "kriswallsmith/buzz": "^1.2",
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
+        "laraveldaily/laravel-invoices": "^2.0",
         "mailgun/mailgun-php": "^3.2",
         "nyholm/psr7": "^1.4",
         "phplicengine/bitly": "^1.0"
