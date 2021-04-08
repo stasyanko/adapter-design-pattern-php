@@ -54,4 +54,8 @@ return [
         'api_key' => env('BITLY_API_KEY'),
     ],
 
+    'news_api' => [
+        'api_key' => env('NEWS_API_KEY'),
+    ],
+
 ];

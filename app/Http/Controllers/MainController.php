@@ -8,6 +8,7 @@ use App\Adapters\Bitcoin\BitcoinPriceInterface;
 use App\Adapters\Email\EmailClientInterface;
 use App\Adapters\Image\ImageSearchInterface;
 use App\Adapters\IpGeolocation\IpGeolocationInterface;
+use App\Adapters\News\NewsClientInterface;
 use App\Adapters\Thumbnail\ThumbnailMakerInterface;
 use App\Adapters\UrlShortener\UrlShortenerInterface;
 use App\Adapters\Weather\WeatherProviderInterface;
@@ -16,6 +17,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Routing\Controller as BaseController;
+use DateTime;
 
 class MainController extends BaseController
 {
@@ -76,5 +78,16 @@ class MainController extends BaseController
         $shortUrl = $urlShortener->makeShortUrl('https://webcodingo.com');
 
         dd($shortUrl);
+    }
+
+    public function news(NewsClientInterface $newsClient)
+    {
+        $newsDtos = $newsClient->search(
+            'Suez canal',
+            new DateTime(),
+            100
+        );
+
+        dd($newsDtos);
     }
 }

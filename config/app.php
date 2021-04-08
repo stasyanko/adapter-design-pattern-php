@@ -180,6 +180,7 @@ return [
         App\Providers\BitcoinPriceServiceProvider::class,
         App\Providers\IpGeolocationServiceProvider::class,
         App\Providers\ImageSearchServiceProvider::class,
+        App\Providers\NewsClientServiceProvider::class,
 
     ],
 
