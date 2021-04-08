@@ -9,6 +9,7 @@ use App\Adapters\Email\EmailClientInterface;
 use App\Adapters\Image\ImageSearchInterface;
 use App\Adapters\IpGeolocation\IpGeolocationInterface;
 use App\Adapters\Thumbnail\ThumbnailMakerInterface;
+use App\Adapters\UrlShortener\UrlShortenerInterface;
 use App\Adapters\Weather\WeatherProviderInterface;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -68,5 +69,12 @@ class MainController extends BaseController
         $weatherDto = $weatherProviderAdapter->currentWeather(53.893009,27.567444);
 
         dd($weatherDto);
+    }
+
+    public function shortenUrl(UrlShortenerInterface $urlShortener)
+    {
+        $shortUrl = $urlShortener->makeShortUrl('https://webcodingo.com');
+
+        dd($shortUrl);
     }
 }

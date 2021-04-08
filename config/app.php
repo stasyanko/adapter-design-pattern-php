@@ -176,7 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\EmailServiceProvider::class,
         App\Providers\ThumbnailMakerServiceProvider::class,
-        App\Providers\WeatherServiceProvider::class,
+        App\Providers\UrlShortenerServiceProvider::class,
         App\Providers\BitcoinPriceServiceProvider::class,
         App\Providers\IpGeolocationServiceProvider::class,
         App\Providers\ImageSearchServiceProvider::class,

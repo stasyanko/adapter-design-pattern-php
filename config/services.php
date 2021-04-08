@@ -50,4 +50,8 @@ return [
         'api_key' => env('PIXABAY_API_KEY'),
     ],
 
+    'bitly' => [
+        'api_key' => env('BITLY_API_KEY'),
+    ],
+
 ];
