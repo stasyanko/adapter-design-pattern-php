@@ -12,6 +12,7 @@ use App\Adapters\Invoice\InvoiceItemDto;
 use App\Adapters\Invoice\PartyDto;
 use App\Adapters\IpGeolocation\IpGeolocationInterface;
 use App\Adapters\News\NewsClientInterface;
+use App\Adapters\Slug\SlugInterface;
 use App\Adapters\Thumbnail\ThumbnailMakerInterface;
 use App\Adapters\UrlShortener\UrlShortenerInterface;
 use App\Adapters\Weather\WeatherProviderInterface;
@@ -92,6 +93,13 @@ class MainController extends BaseController
         );
 
         dd($newsDtos);
+    }
+
+    public function slug(SlugInterface $slugGenerator)
+    {
+        $slug = $slugGenerator->generate('Messaging is the main OOP concept');
+
+        dd($slug);
     }
 
     public function invoice(InvoiceGeneratorInterface $invoiceGenerator)

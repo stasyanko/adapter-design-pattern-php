@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec4fdcbb1cfd8d2bd76db38aeafb3d8f",
+    "content-hash": "a9e1dde9fde20dd30d9e455c9399cb8c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -57,6 +57,65 @@
                 "stack"
             ],
             "time": "2021-03-11T06:42:03+00:00"
+        },
+        {
+            "name": "ausi/slug-generator",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ausi/slug-generator.git",
+                "reference": "4e761b08966c5d4aeecc1829ac997e5a5a29d231"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ausi/slug-generator/zipball/4e761b08966c5d4aeecc1829ac997e5a5a29d231",
+                "reference": "4e761b08966c5d4aeecc1829ac997e5a5a29d231",
+                "shasum": ""
+            },
+            "require": {
+                "ext-intl": "*",
+                "ext-mbstring": "*",
+                "ext-pcre": "*",
+                "lib-icu": ">=4.2.1",
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "contao/easy-coding-standard": "^3.0",
+                "phpstan/phpstan": "^0.12.40",
+                "phpstan/phpstan-phpunit": "^0.12.16",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.4 || ^9.4.2",
+                "psalm/plugin-phpunit": "^0.9",
+                "slam/phpstan-extensions": "^5.0",
+                "vimeo/psalm": "^3.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ausi\\SlugGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Auswöger",
+                    "email": "martin@auswoeger.com"
+                }
+            ],
+            "description": "Slug Generator",
+            "keywords": [
+                "ascii",
+                "cldr",
+                "pretty-url",
+                "slug",
+                "slug-generator",
+                "slugify",
+                "transliteration",
+                "unicode"
+            ],
+            "time": "2020-10-19T15:25:33+00:00"
         },
         {
             "name": "barryvdh/laravel-dompdf",
