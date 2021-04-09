@@ -25,6 +25,7 @@ class LaravelInvoicesAdapter implements InvoiceGeneratorInterface
         PartyDto $buyerDto,
         array $invoiceItemDtos,
         string $currencyCode,
+        string $currencySymbol,
         string $fileName
     ): void
     {
@@ -57,6 +58,7 @@ class LaravelInvoicesAdapter implements InvoiceGeneratorInterface
 
         try {
             $invoice->currencyCode($currencyCode)
+                ->currencySymbol($currencySymbol)
                 ->filename($fileName)
                 ->save('public');
         } catch (Exception $e) {

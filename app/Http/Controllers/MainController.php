@@ -109,6 +109,7 @@ class MainController extends BaseController
             $buyerDto,
             $invoiceItemDtos,
             'USD',
+            '$',
             $fileName
         );
 

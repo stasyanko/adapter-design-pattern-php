@@ -11,6 +11,7 @@ interface InvoiceGeneratorInterface
      * @param PartyDto $buyerDto
      * @param InvoiceItemDto[] $invoiceItemDtos
      * @param string $currencyCode
+     * @param string $currencySymbol
      * @param string $fileName
      * @return void
      *
@@ -21,6 +22,7 @@ interface InvoiceGeneratorInterface
         PartyDto $buyerDto,
         array $invoiceItemDtos,
         string $currencyCode,
+        string $currencySymbol,
         string $fileName
     ): void;
 }
