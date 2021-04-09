@@ -17,7 +17,6 @@ class LaravelInvoicesAdapter implements InvoiceGeneratorInterface
         $this->invoice = $invoice;
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -26,7 +25,7 @@ class LaravelInvoicesAdapter implements InvoiceGeneratorInterface
         PartyDto $buyerDto,
         array $invoiceItemDtos,
         string $currencyCode,
-        string $pathToSave
+        string $fileName
     ): void
     {
         $buyer = new Party([
@@ -58,7 +57,8 @@ class LaravelInvoicesAdapter implements InvoiceGeneratorInterface
 
         try {
             $invoice->currencyCode($currencyCode)
-                ->render();
+                ->filename($fileName)
+                ->save('public');
         } catch (Exception $e) {
             throw new RuntimeException($e->getMessage());
         }

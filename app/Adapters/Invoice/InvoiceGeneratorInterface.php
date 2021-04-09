@@ -11,7 +11,7 @@ interface InvoiceGeneratorInterface
      * @param PartyDto $buyerDto
      * @param InvoiceItemDto[] $invoiceItemDtos
      * @param string $currencyCode
-     * @param string $pathToSave
+     * @param string $fileName
      * @return void
      *
      * @throws RuntimeException
@@ -21,6 +21,6 @@ interface InvoiceGeneratorInterface
         PartyDto $buyerDto,
         array $invoiceItemDtos,
         string $currencyCode,
-        string $pathToSave
+        string $fileName
     ): void;
 }

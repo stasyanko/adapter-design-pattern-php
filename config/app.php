@@ -179,7 +179,7 @@ return [
         App\Providers\UrlShortenerServiceProvider::class,
         App\Providers\BitcoinPriceServiceProvider::class,
         App\Providers\IpGeolocationServiceProvider::class,
-        App\Providers\ImageSearchServiceProvider::class,
+        App\Providers\InvoiceGeneratorServiceProvider::class,
         App\Providers\NewsClientServiceProvider::class,
 
     ],

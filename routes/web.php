@@ -11,3 +11,4 @@ Route::get('/bitcoin', [MainController::class, 'bitcoin']);
 Route::get('/weather', [MainController::class, 'weather']);
 Route::get('/shorten-url', [MainController::class, 'shortenUrl']);
 Route::get('/news', [MainController::class, 'news']);
+Route::get('/invoice', [MainController::class, 'invoice']);

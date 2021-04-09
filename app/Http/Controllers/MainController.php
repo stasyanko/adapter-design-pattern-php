@@ -7,6 +7,9 @@ namespace App\Http\Controllers;
 use App\Adapters\Bitcoin\BitcoinPriceInterface;
 use App\Adapters\Email\EmailClientInterface;
 use App\Adapters\Image\ImageSearchInterface;
+use App\Adapters\Invoice\InvoiceGeneratorInterface;
+use App\Adapters\Invoice\InvoiceItemDto;
+use App\Adapters\Invoice\PartyDto;
 use App\Adapters\IpGeolocation\IpGeolocationInterface;
 use App\Adapters\News\NewsClientInterface;
 use App\Adapters\Thumbnail\ThumbnailMakerInterface;
@@ -89,5 +92,26 @@ class MainController extends BaseController
         );
 
         dd($newsDtos);
+    }
+
+    public function invoice(InvoiceGeneratorInterface $invoiceGenerator)
+    {
+        $sellerDto = new PartyDto('Andrew', '202-555-0193');
+        $buyerDto = new PartyDto('Mark', '308-158-0173');
+        $invoiceItemDtos = [
+            new InvoiceItemDto('Apples', 5, 7, 3),
+            new InvoiceItemDto('Oranges', 8, 5, 7),
+        ];
+        $fileName = 'Invoice_0001';
+
+        $invoiceGenerator->generate(
+            $sellerDto,
+            $buyerDto,
+            $invoiceItemDtos,
+            'USD',
+            $fileName
+        );
+
+        return response()->file(storage_path('app/public/' . $fileName . '.pdf'));
     }
 }

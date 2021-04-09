@@ -13,7 +13,7 @@ final class InvoiceItemDto
         string $title,
         float $pricePerUnit,
         int $quantity,
-        int $discount,
+        int $discount
     )
     {
         $this->title = $title;
