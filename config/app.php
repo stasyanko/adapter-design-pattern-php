@@ -181,6 +181,7 @@ return [
         App\Providers\IpGeolocationServiceProvider::class,
         App\Providers\InvoiceGeneratorServiceProvider::class,
         App\Providers\SlugGeneratorServiceProvider::class,
+        App\Providers\MarkdownParserServiceProvider::class,
 
     ],
 

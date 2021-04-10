@@ -11,6 +11,7 @@ use App\Adapters\Invoice\InvoiceGeneratorInterface;
 use App\Adapters\Invoice\InvoiceItemDto;
 use App\Adapters\Invoice\PartyDto;
 use App\Adapters\IpGeolocation\IpGeolocationInterface;
+use App\Adapters\Markdown\MarkdownParserInterface;
 use App\Adapters\News\NewsClientInterface;
 use App\Adapters\Slug\SlugInterface;
 use App\Adapters\Thumbnail\ThumbnailMakerInterface;
@@ -100,6 +101,19 @@ class MainController extends BaseController
         $slug = $slugGenerator->generate('Messaging is the main OOP concept');
 
         dd($slug);
+    }
+
+    public function markdown(MarkdownParserInterface $markdownParser)
+    {
+        $html = $markdownParser->toHtml(
+            "## My wish list for today:
+ - get a pizza
+ - get an ice cream
+ - go for a walk",
+            true
+        );
+
+        return view('markdown', ['html' => $html]);
     }
 
     public function invoice(InvoiceGeneratorInterface $invoiceGenerator)

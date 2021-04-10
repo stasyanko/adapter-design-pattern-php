@@ -13,3 +13,4 @@ Route::get('/shorten-url', [MainController::class, 'shortenUrl']);
 Route::get('/news', [MainController::class, 'news']);
 Route::get('/invoice', [MainController::class, 'invoice']);
 Route::get('/slug', [MainController::class, 'slug']);
+Route::get('/markdown', [MainController::class, 'markdown']);
