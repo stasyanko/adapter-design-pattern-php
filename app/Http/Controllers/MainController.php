@@ -13,6 +13,7 @@ use App\Adapters\Invoice\PartyDto;
 use App\Adapters\IpGeolocation\IpGeolocationInterface;
 use App\Adapters\Markdown\MarkdownParserInterface;
 use App\Adapters\News\NewsClientInterface;
+use App\Adapters\ProxyIp\ProxyIpInterface;
 use App\Adapters\Slug\SlugInterface;
 use App\Adapters\Thumbnail\ThumbnailMakerInterface;
 use App\Adapters\UrlShortener\UrlShortenerInterface;
@@ -114,6 +115,13 @@ class MainController extends BaseController
         );
 
         return view('markdown', ['html' => $html]);
+    }
+
+    public function proxy(ProxyIpInterface $proxyIp)
+    {
+        $proxyIpRes = $proxyIp->random();
+
+        dd($proxyIpRes);
     }
 
     public function invoice(InvoiceGeneratorInterface $invoiceGenerator)

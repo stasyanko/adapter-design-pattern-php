@@ -182,6 +182,7 @@ return [
         App\Providers\InvoiceGeneratorServiceProvider::class,
         App\Providers\SlugGeneratorServiceProvider::class,
         App\Providers\MarkdownParserServiceProvider::class,
+        App\Providers\ProxyIpServiceProvider::class,
 
     ],
 
