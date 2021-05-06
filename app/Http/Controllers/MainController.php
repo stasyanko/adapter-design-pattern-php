@@ -31,7 +31,7 @@ class MainController extends BaseController
 
     public function ip(IpGeolocationInterface $ipGeolocation)
     {
-        $geoData = $ipGeolocation->geoDataFromIp('1.32.239.255	');
+        $geoData = $ipGeolocation->geoDataFromIp('1.32.239.255');
 
         dd($geoData);
     }
